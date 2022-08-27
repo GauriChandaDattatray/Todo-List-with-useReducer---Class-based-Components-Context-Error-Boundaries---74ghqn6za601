@@ -1,17 +1,10 @@
-import React, { useReducer } from "react";
-
-const Todo = (props) => {
-  const { todo } = props;
+import React from "react";
+import "../styles/App.css";
+const Todo = ({ title, id, handleDelete }) => {
   return (
     <div className="todo">
-      {" "}
-      <div className="todo- title">{todo.title}</div>
-      <button
-        className="todo- delete"
-        onClick={() =>
-          props.dispatch({ type: "DELETE", payload: { id: todo.id } })
-        }
-      >
+      <div className="todo-title">{title}</div>
+      <button className="todo-delete" onClick={() => handleDelete(id)}>
         Delete
       </button>
     </div>
@@ -19,11 +12,3 @@ const Todo = (props) => {
 };
 
 export { Todo };
-// import React from 'react';
-// const Todo = () => {
-//     return (
-//         <></>
-//     )
-// }
-
-// export { Todo }
